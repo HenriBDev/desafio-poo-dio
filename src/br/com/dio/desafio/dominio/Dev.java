@@ -46,16 +46,28 @@ public class Dev {
         this.nome = nome;
     }
 
-    public Set<Conteudo> getConteudosInscritos() {
-        return conteudosInscritos;
+    public String getConteudosInscritos() {
+        String textoFormatado = "";
+        Conteudo conteudo;
+        for(Iterator<Conteudo> conteudoSet = conteudosInscritos.iterator(); conteudoSet.hasNext();){
+            conteudo = conteudoSet.next();
+            textoFormatado += "\n\nCurso: " + conteudo.getTitulo() + "\nDescrição: " + conteudo.getDescricao();
+        }
+        return textoFormatado;
     }
 
     public void setConteudosInscritos(Set<Conteudo> conteudosInscritos) {
         this.conteudosInscritos = conteudosInscritos;
     }
 
-    public Set<Conteudo> getConteudosConcluidos() {
-        return conteudosConcluidos;
+    public String getConteudosConcluidos() {
+        String textoFormatado = "";
+        Conteudo conteudo;
+        for(Iterator<Conteudo> conteudoSet = conteudosConcluidos.iterator(); conteudoSet.hasNext();){
+            conteudo = conteudoSet.next();
+            textoFormatado += "\n\nCurso: " + conteudo.getTitulo() + "\nDescrição: " + conteudo.getDescricao();
+        }
+        return textoFormatado;
     }
 
     public void setConteudosConcluidos(Set<Conteudo> conteudosConcluidos) {
